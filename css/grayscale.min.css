@@ -18,15 +18,17 @@ body,html {
 }
 
 .about {
-  background-color: #727272
+  background-color: #424242;
+  font-family: Raleway
 }
 
 .invite {
-  background-color: #727272
+  background-color: #424242;
+  font-family: Raleway
 }
 
 body {
-    font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Raleway;
     color: #212121;
     webkit-tap-highlight-color: rgba(255,255,255,.2)
 }
@@ -150,19 +152,15 @@ a:focus,a:hover {
     padding: 100px 0;
     text-align: center;
     color: #F5F5F5;
-    background-color: #9c9c9c;
+    background-color: #212121;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover
 }
 
-.inv {
-  background: #727272
-}
-
 .help {
-  background: #727272
+  background: #424242
 }
 
 .intro .intro-body {
@@ -218,14 +216,15 @@ a:focus,a:hover {
 }
 
 .content-section {
-    padding-top: 100px
+    padding-top: 100px;
+    color: #b0bec5
 }
 
 .download-section {
     width: 100%;
     padding: 50px 0;
-    color: #212121;
-    background: #727272;
+    color: #b0bec5;
+    background: #424242;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -286,7 +285,7 @@ ul.banner-social-buttons {
 }
 
 footer {
-    padding: 50px 0;
+    padding: 20px 0;
     background: #616161
 }
 
