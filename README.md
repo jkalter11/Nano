@@ -1,4 +1,5 @@
-# AyyBot GitHub site (based on Bootstrap framework)
+# Nano Webpage
 
-#### Copyright and License (MIT)
-Bootstrap template made by David Miller on Start Bootstrap
+#### Copyright and License
+Copyright by DefaltSimon
+Bootstrap template made by David Miller on Start Bootstrap (Apache 2.0 license)
