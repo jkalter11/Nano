@@ -1,148 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nano webpage">
-    <meta name="keywords" content="nano,defalt,simon,defaltsimon,discord,bots,bot,moderation,simple,useful bot">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!-- page details -->
+    <meta name="description" content="A webpage about Nano, a Discord bot">
+    <meta name="keywords" content="Discord,Nano,bot,moderation,fun">
     <meta name="author" content="DefaltSimon">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-
+    <!-- visual info -->
     <title>Nano | by DefaltSimon</title>
+    <link rel="icon" type="image/x-icon" href="">
+    <meta name="theme-color" content="#2d2d2d">
+    <!-- css -->
+    <link href="styles/main.css" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-
-    <!-- Theme CSS -->
-    <link href="css/nano.min.css" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-    <!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-81866461-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 
 </head>
+<body>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
 
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#invite">Invite</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#help">Help</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<header class="header flex flex--middle">
+    <span class="header__brand">
+        <a href="#home">Nano </a>
+        <svg width="80" height="40" viewBox="0 0 80 40" preserveAspectRatio="none">
+            <path d="M0 40 H 80 V 0 H 0 L0 40" stroke-width="4px" stroke="#568e39" style="fill: none"></path>
+            <rect height="40" width="80" fill="#609943" stroke="none"></rect>
+        </svg>
+    </span>
+
+    <nav class="header__links flex flex--right mr90 flex--middle">
+        <a href="#about">About</a>
+        <a href="#invite">Invite</a>
+        <a href="#help">Help</a>
     </nav>
+</header>
+<main>
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Nano</h1>
-                        <p class="intro-text">A multi-purpose Discord bot with moderation and other fun and useful features</p>
-                        <a href="#invite" role="button" class="btn btn-default page-scroll"><b>I want it!</b></a>
-                    </div>
-                </div>
-            </div>
+<div class="main">
+<section id="home" class="main body">
+    <div class="container">
+        <h1 class="mb45">Nano</h1>
+
+        <p class="mb30">A multi-purpose bot with moderation and other fun features for Discord</p>
+
+        <a class="body__button green" href="#invite">I want it!</a>
+    </div>
+</section>
+<section id="about" class="body">
+    <div class="container">
+        <h2 class="mb60">ABOUT NANO</h2>
+
+        <p class="p--center mb45">
+            Nano features a spam detection system, word and invite filtering along with other moderation tools.<br>
+            Apart from that it has many fun and useful commands to brighten up your day (Steam, Team Fortress 2, Minecraft, osu!)<br>
+            It can even search on Urban Dictionary or Wikipedia for you!
+        </p>
+
+        <p>Nano is actively updated by <a href="https://github.com/DefaltSimon" class="link">DefaltSimon</a>, the creator.</p>
+    </div>
+</section>
+<section id="invite" class="body">
+    <div class="container">
+        <h3 class="mb60">Invite?</h3>
+        <p class="mb45">Want to add <b>Nano</b> to your server? Amazing!</p>
+        <a class="body__button green" href="https://discordapp.com/oauth2/authorize?client_id=171632249459048448&scope=bot&permissions=8" target="_blank">Use this big green button!</a>
+    </div>
+</section>
+<section id="help" class="body">
+    <div class="container">
+        <h4 class="mb60">Need Help?</h4>
+        <p class="mb15">Don't know how to get started? You can read about the commands <a class="link" href="https://github.com/DefaltSimon/Nano/wiki/Commands" target="_blank">here</a> or mention Nano after you have added him to your server.</p>
+        <p class="mb60">Having problems? Found a bug? No worries! We will happily assist you in our Discord server.</p>
+        <a class="body__button green" href="https://discord.gg/FZJB6UJ" target="_blank">Join 'Nano Lounge'</a>
+    </div>
+</section>
+</div>
+<footer class="footer">
+    <div class="conteiner flex flex--column flex--middle flex--center">
+        <div>
+            <a class="link white" href="https://github.com/DefaltSimon">About me</a>
+            <span>|</span>
+            <a class="link white" href="https://github.com/DefaltSimon/Nano">Nano on Github</a>
         </div>
-    </header>
+        <div>&copy; Copyright 2017, DefaltSimon</div>
+    </div>
 
-    <!-- About Section -->
-    <header class="about">
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Nano</h2>
-                <p>Nano features a 'unique' spam detection system, word and invite filtering and other moderation tools.
-                    Apart from that it has many fun and useful commands to brighten up your day (TF2, Minecraft, Steam, osu!)</p>
-                <p>It is being actively updated by <a href="https://github.com/DefaltSimon">DefaltSimon</a>, the creator of Nano.</p>
-            </div>
-        </div>
-    </section>
-    </header>
+</footer>
 
+    </main>
 
-    <!-- Invite Header -->
-    <header class="invite">
-      <section id="invite" class="container content-section text-center">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                  <p>Want to add Nano to your server? Great!</p>
-                  <a href="https://discordapp.com/oauth2/authorize?client_id=171632249459048448&scope=bot&permissions=1307835511" class="btn btn-default btn-lg">Invite Nano to your server</a>
-                </div>
-            </div>
-      </section>
-    </header>
-
-    <!-- Help Section -->
-    <header class="help">
-    <section id="help" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Need help?</h2>
-                    <p>Don't know how to get started? You can read about the commands <a href="https://github.com/DefaltSimon/Nano/wiki/Commands">here</a> or just type <b>@Nano</b> after you have added Nano to your server.</p>
-                    <p>Still confused? No worries! I will happily assist you in our Discord server.</p>
-                    <a href="https://discord.gg/FZJB6UJ" class="btn btn-default btn-lg">Join the Nano lounge</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    </header>
-
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&nbsp;</p>
-            <p>Copyright &copy; DefaltSimon 2016</p>Created with Bootstrap | Grayscale template by Startbootstrap
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/nano.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script src="scripts/main.js"></script>
 </body>
-
 </html>
+
+
