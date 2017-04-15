@@ -1,59 +1,8 @@
-// t: current time, b: begInnIng value, c: change In value, d: duration
-jQuery.easing['jswing'] = jQuery.easing['swing'];
-
-jQuery.extend( jQuery.easing,
-    {
-        easeOutQuart: function (x, t, b, c, d) {
-            return -c * ((t=t/d-1)*t*t*t - 1) + b;
-        },
-    });
-
-/*
- *
- * TERMS OF USE - EASING EQUATIONS
- *
- * Open source under the BSD License.
- *
- * Copyright ÂŠ 2001 Robert Penner
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
- *
- * Redistributions of source code must retain the above copyright notice, this list of
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list
- * of conditions and the following disclaimer in the documentation and/or other materials
- * provided with the distribution.
- *
- * Neither the name of the author nor the names of contributors may be used to endorse
- * or promote products derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
- * OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- */
-const root = $('html, body');
-
-$(document).ready(function() {
-    $("a[href^='#']").click(function (e) {
-        e.preventDefault();
-
-        let hash = this.hash;
-        let target = $(hash);
-
-        $('html, body').stop().animate({
-            'scrollTop': target.offset().top
-            }, 1250, 'easeOutQuart', function () {
-                window.location.hash = hash;
-            });
-    })
-});
-//# sourceMappingURL=sourcemaps/main.js.map
+const root=$('html, body');let beaconSupported=!0;if(!navigator.sendBeacon){console.log("Beacon is NOT supported, disabling...");beaconSupported=!1}
+let gaEnabled=!0;if(typeof ga==="undefined"){console.log("Google analytics are disabled.");gaEnabled=!1}
+$.easing.jswing=$.easing.swing;$.extend($.easing,{easeOutQuart:function(x,t,b,c,d){return-c*((t=t/d-1)*t*t*t-1)+b},});function throttle(fn,interval){let lastCall,timeoutId;return function(){let now=new Date().getTime();if(lastCall&&now<(lastCall+interval)){clearTimeout(timeoutId);timeoutId=setTimeout(function(){lastCall=now;fn.call()},interval-(now-lastCall))}else{lastCall=now;fn.call()}}}
+$(document).ready(function(){const section=$("section.track");$("a[href^='#']").click(function(e){e.preventDefault();let hash=this.hash;let target=$(hash);root.stop().animate({'scrollTop':target.offset().top},1250,"easeOutQuart",function(){window.location.hash=hash})});let trackedNavs={};section.each(function(){let myId=$(this).attr("id");let corresp=$(".header__sidenav a[track="+myId+"]");if(typeof corresp!=="undefined"){trackedNavs[myId]=corresp}});function removeOthers(keep_this,class_name){for(let a in trackedNavs){if(trackedNavs[a]!==keep_this){trackedNavs[a].removeClass(class_name)}}}
+function trackSections(){let currentPos=$(this).scrollTop();section.each(function(){let th=$(this);let fromTop=th.offset().top;let hrefId=th.attr("id");thisOne=trackedNavs[hrefId];if((currentPos+50)>=fromTop){removeOthers(thisOne,"active");thisOne.addClass('active')}})}
+$(window).scroll(throttle(trackSections,200));let slides=$(".body__commands__container .cmd__category");let trackedSlides={};slides.each(function(){let th=$(this);let slideID=th.attr("id");if(typeof slideID!=="undefined"){trackedSlides[slideID]=th}});function hideOtherSlides(current){for(let a in trackedSlides){if(trackedSlides[a]!==current){trackedSlides[a].removeClass("show")}}}
+let tabList=$(".cmd__switcher li");let trackedSlideParents=[];tabList.each(function(){trackedSlideParents.push($(this))});function unActiveOthers(current){for(let a=0;a<trackedSlideParents.length;a++){if(trackedSlideParents[a]!==current){trackedSlideParents[a].removeClass("active")}}}
+if(window.location.href.includes("commands.html")){tabList.click(function(e){e.preventDefault();let btn=$(this);let one=trackedSlides[btn.attr("slide")];let slide=$(".cmd__category[id="+one.hash+"]");hideOtherSlides(one);one.addClass("show");unActiveOthers(btn.parent());btn.addClass("active")})}})

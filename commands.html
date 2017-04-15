@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- page details -->
+    <meta name="description" content="A webpage about Nano, a Discord bot">
+    <meta name="keywords" content="Discord,Nano,bot,moderation,fun">
+    <meta name="author" content="DefaltSimon">
+
+    <!-- visual info -->
+    <title>Nano | by DefaltSimon</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="theme-color" content="#3c3c3c">
+    <!-- css -->
+    <link href="styles/main.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+
+<header class="header flex flex--middle">
+    <span class="header__brand">
+        <a href="index.html">Nano</a>
+        <svg width="80" height="40" viewBox="0 0 80 40" preserveAspectRatio="none">
+            <path d="M0 40 H 80 V 0 H 0 L0 40" stroke-width="4px" stroke="#568e39" style="fill: none"></path>
+            <rect height="40" width="80" fill="#609943" stroke="none"></rect>
+        </svg>
+    </span>
+
+    <nav class="header__links flex flex--right mr90 flex--middle">
+        <a href="index.html">Home</a>
+        <a href="commands.html">Commands</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+</header>
+<main>
+<div class="main">
+    <section id="commands" class="body__commands">
+        <div class="body__commands__text">
+            <h1>Nano's commands</h1>
+            <p>Nano's default prefix for commands is <span class="command exc">!</span>, but it can be changed. Keep in
+                mind that you might have to use a different prefix on your server.</p>
+            <p class="smaller">Legend: ( ) - parameter is optional, [ ] - parameter is required</p>
+        </div>
+
+        <div class="body__commands__container flex flex--center">
+            <ul class="cmd__switcher">
+                <li slide="useful" class="active">Useful</li>
+                <li slide="fun">Fun</li>
+                <li slide="help">Help</li>
+                <li slide="games">Games</li>
+                <li slide="reminders">Reminders</li>
+                <li slide="other">Other</li>
+                <li slide="moderator">Moderator</li>
+                <li slide="admin">Admin</li>
+            </ul>
+
+            <div class="cmd__category show" id="useful">
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!define</td>
+                        <td class="desc">Gives you the definition of a word from Wikipedia</td>
+                        <td class="alias">!wiki</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!urban [word]</td>
+                        <td class="desc">Gives you the definition of a word from Urban Dictionary</td>
+                        <td></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!avatar (mention or name)</td>
+                        <td class="desc">Gives you the avatar url of a mentioned person or if not present, yours</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!commands</td>
+                        <td class="desc">Displays a link to this page</td>
+                        <td class="alias">!cmds</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!invite</td>
+                        <td class="desc">Gives you a link to invite Nano to your server</td>
+                        <td class="alias">nano.invite</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!say (#channel) [message]</td>
+                        <td class="desc">Says something (#channel is optional). Useful for announcements</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="fun">
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!8ball</td>
+                        <td class="desc">Answers your questions. 8ball style.</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!meme [meme name]|[top text]|[bottom text]</td>
+                        <td class="desc">Captions a meme with your text. Take a look at <a class="link lightblue"
+                                                                                           href="https://imgflip.com/memegenerator">imgflip's
+                            meme list</a> for convenience.
+                        </td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!cat</td>
+                        <td class="desc">I love cats. And this is a gif of a cat.</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!decide word1|word2|word3|...</td>
+                        <td class="desc">Decides between different choices so you don't have to.</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!dice</td>
+                        <td class="desc">Rolls the dice</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!roll [number]</td>
+                        <td class="desc">Dice with custom amount of sides</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!hello</td>
+                        <td class="desc">Welcomes a mentioned person, or if no mentions are present, you</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!kappa</td>
+                        <td class="desc">Memes.</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!randomgif</td>
+                        <td class="desc">Sends a random gif from Giphy</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!quote</td>
+                        <td class="desc">Brightens your day with a random quote</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!rip (something/@mention)</td>
+                        <td class="desc">Rest in pepperoni</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="help">
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!help</td>
+                        <td class="desc">Displays a basic help message</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!help [command]</td>
+                        <td class="desc">Shows info about a certain command</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!notifydev</td>
+                        <td class="desc">Sends a message to the developer</td>
+                        <td class="alias">!suggest</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!bug</td>
+                        <td class="desc">Tells you how and where to report bugs if you find 'em</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!info</td>
+                        <td class="desc">A little bit about Nano</td>
+                        <td class="alias">nano.info</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.prefix</td>
+                        <td class="desc">Shows the current server prefix</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="games">
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!tf [item name]</td>
+                        <td class="desc">Gets item prices from backpack.tf (not great for items with unusual
+                            effects/sheens)
+                        </td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!mc [item name or id:meta]</td>
+                        <td class="desc">Searches for items and displays their details and icons</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!osu [username/id]</td>
+                        <td class="desc">Displays stats for an osu! player</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    <span class="cmd--type">Steam</span><br>
+                    The <span class="command">user</span> parameter should always be either ending of user's url or an
+                    id.
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!steam [user]</td>
+                        <td class="desc">Searches for the specified steam id. Sub-commands below</td>
+                        <td class="alias">!steam user</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!steam friends [user]</td>
+                        <td class="desc">Lists friends that the user has</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!steam games [user]</td>
+                        <td class="desc">Lists all owned games that the user has</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!steam help</td>
+                        <td class="desc">Help for !steam</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="reminders">
+                <p class="bb">
+                    Time input examples: <span class="command">1h 3min</span>, <span class="command">2d 7min</span>,
+                    <span class="command">6h</span>, etc...
+                    Please do not use plural keywords (such as mins, hrs, ...).<br>
+                    Also, keep in mind that reminders are not second-precise.
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!remind</td>
+                        <td class="desc">Displays help about reminders.</td>
+                        <td class="alias">!remind help</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!remind here in [time] : [message]</td>
+                        <td class="desc">Adds a reminder. You will be reminded in the channel you start this in</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!remind me in [time] : [message]</td>
+                        <td class="desc">Adds a reminder. You will be reminded in your DM</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!remind list</td>
+                        <td class="desc">Lists all ongoing reminders and time left</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!remind remove [your content / 'all']</td>
+                        <td class="desc">Removes a reminder (or all reminders)</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="other">
+                <p class="bb">
+                    <span class="cmd--type">Voting</span><br>
+                    These commands require a permission: <span class="command"><b>Nano Admin</b></span>.
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!vote [option number]</td>
+                        <td class="desc">Votes for an option if there is a vote going on</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!vote start "question" choice1|choice2|...</td>
+                        <td class="desc">Starts a vote</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!vote end</td>
+                        <td class="desc">Votes for an option if there is a vote going on</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!vote status</td>
+                        <td class="desc">Displays info about the ongoing vote (this command does not require <span
+                                class="command">Nano Admin</span></td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    <span class="cmd--type">IMDb/OMDb</span><br>
+                    <a href="http://www.omdbapi.com/">Open Movie Database</a> is used to display movie info.
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!imdb</td>
+                        <td class="desc">General info about the movie search module</td>
+                        <td class="alias">!omdb</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!imdb search [title]</td>
+                        <td class="desc">Displays general stuff about the film/series</td>
+                        <td class="alias">!omdb search</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!imdb plot [title]</td>
+                        <td class="desc">Displays more plot info about a film/series.</td>
+                        <td class="alias">!omdb plot</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!imdb rating [title]</td>
+                        <td class="desc">Displays different ratings for a film/series</td>
+                        <td class="alias">!omdb rating</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!imdb trailer [title]</td>
+                        <td class="desc">Gives you a link to trailers of a film/series</td>
+                        <td class="alias">!omdb trailer</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!imdb help [command name]</td>
+                        <td class="desc">Displays available commands regarding movie search / info about specific
+                            command
+                        </td>
+                        <td class="alias">!omdb help</td>
+                    </tr>
+                </table>
+                <p class="bt pt20">
+                    <span class="cmd--type">Other commands</span><br>
+                    Mostly for 'advanced' users
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!ping</td>
+                        <td class="desc">Checks if Nano is running</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!members</td>
+                        <td class="desc">Lists all members on the server</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!server</td>
+                        <td class="desc">Displays general server info</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!github</td>
+                        <td class="desc">Link to Nano's source code on GitHub</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!stats</td>
+                        <td class="desc">Some stats like message count, etc.</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!status</td>
+                        <td class="desc">Displays current status: server, user and channel count</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!debug</td>
+                        <td class="desc">Displays EVEN MORE stats about Nano</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!uptime</td>
+                        <td class="desc">Tells you how long te bot has been running for</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="moderator">
+                <p class="bb">
+                    These commands require a mod permission.
+                    To make someone a mod, give them a role named <span class="command"><b>Nano Mod</b></span>.<br>
+                    For more info and common mistakes, look into the <i>Guides</i> section of <a class="link lightblue"
+                                                                                                 href="faq.html">FAQ</a>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!ban @mention</td>
+                        <td class="desc">Bans a member</td>
+                        <td class="alias">nano.ban</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!unban [user name]</td>
+                        <td class="desc">Un-bans a member</td>
+                        <td class="alias">nano.unban</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!kick @mention</td>
+                        <td class="desc">Un-bans a member</td>
+                        <td class="alias">nano.unban</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!softban [time] | @mention</td>
+                        <td class="desc">Bans a member for specified time (for time formatting, see <i>Reminders</i>
+                            tab.
+                        </td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!nuke [amount]</td>
+                        <td class="desc">Nukes (deletes) last <span class="command">number</span> or messages. Keep in
+                            mind that you can only nuke messages up to 2 weeks old!
+                        </td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    <span class="cmd--type">Muting</span><br>
+                    Muting works by simply deleting users' messages. Keep in mind, that if a muted user has <span
+                        class="command lighter">Mention Everyone</span>
+                    permission, their message will still mention everyone.
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!mute @mention</td>
+                        <td class="desc">Mutes a member</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!unmute @mention</td>
+                        <td class="desc">Un-mutes a member</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!mute list</td>
+                        <td class="desc">Lists member are currently muted</td>
+                        <td class="alias">!muted</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="cmd__category" id="admin">
+                <p class="bb">
+                    These commands require an admin permission.
+                    To make someone an admin, give them a role named <span class="command"><b>Nano Admin</b></span>.<br>
+                    For more info and common mistakes, look into the <i>Guides</i> section of <a class="link lightblue"
+                                                                                                 href="faq.html">FAQ</a>
+                </p>
+                <p class="bb">
+                    <span class="cmd--type">Custom commands</span><br>
+                    Custom commands are a way to add dynamic responses to your server, such as rules and other info.
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <th class="name">Command</th>
+                        <th class="desc">Description</th>
+                        <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!cmd add [command trigger] | [response]</td>
+                        <td class="desc">Creates a command</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!cmd remove [command trigger]</td>
+                        <td class="desc">Removes a command</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!cmd list (page number, if needed)</td>
+                        <td class="desc">Displays custom commands</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!cmd status</td>
+                        <td class="desc">Displays how many commands you have and how many more you can create</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    <span class="cmd--type">Server settings</span><br>
+                    Admins can change server settings, such as <span class="command">join message</span>, <span
+                        class="command">invite filtering</span>, etc.<br>
+                </p>
+                <p class="bt">
+                    1. General<br>
+                    <span class="cmd--desc">
+                    In join/leave/... messages, the following formatting applies:
+                    <span class="command">:user</span> -> user name, <span class="command">:server</span> -> server name (in welcome message).</span>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.sleep</td>
+                        <td class="desc">Puts Nano to sleep - temporarily disables commands</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.wake</td>
+                        <td class="desc">Wakes Nano up - enables commands again</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!joinmsg [message]</td>
+                        <td class="desc">Sets the message sent when a member joins</td>
+                        <td class="alias">!welcomemsg</td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!leavemsg [message]</td>
+                        <td class="desc">Sets the message sent when a member leaves the server</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!banmsg [message]</td>
+                        <td class="desc">Sets the message sent when a member is banned</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!kickmsg [message]</td>
+                        <td class="desc">Sets the message sent when a member is kicked</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    2. Moderation settings<br>
+                    <span class="cmd--desc">Sets server settings like word, spam, invite filtering and log channel</span>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings logchannel [None/#channel]</td>
+                        <td class="desc">sets the log channel. Set to "None" to disable</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings spamfilter [True/False]</td>
+                        <td class="desc">Enables or disables the spam filter</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings wordfilter [True/False]</td>
+                        <td class="desc">Enables or disables the swearing filter</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings invitefilter [True/False]</td>
+                        <td class="desc">Enables or disables the invite filter</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    3. Blacklisting<br>
+                    <span class="cmd--desc">Blacklisting makes Nano ignore certain channels</span>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.blacklist add [#channel]</td>
+                        <td class="desc">Adds a channel to command blacklist</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.blacklist remove [#channel]</td>
+                        <td class="desc">Removes a channel from blacklist</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.blacklist list</td>
+                        <td class="desc">Shows all blacklisted channels</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    4. Role management<br>
+                    <span class="cmd--desc">This group of commands allows you to quickly assign or remove roles from a user.</span>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!role add [role name] @mention</td>
+                        <td class="desc">Adds a role to the mentioned user</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!role remove [role name] @mention</td>
+                        <td class="desc">Removes a role from the mentioned user</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!role replaceall [role name] @mention</td>
+                        <td class="desc">Removes all roles from the mentioned user and adds the specified one</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <div class="conteiner flex flex--column flex--middle flex--center">
+        <div>
+            <a class="link white" href="https://github.com/DefaltSimon">About me</a>
+            <span>|</span>
+            <a class="link white" href="https://github.com/DefaltSimon/Nano">Nano on Github</a>
+        </div>
+        <div>&copy; Copyright 2017, DefaltSimon</div>
+    </div>
+
+</footer>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-81866461-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
+
+
