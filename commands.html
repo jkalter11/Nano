@@ -106,6 +106,12 @@
                         <td class="desc">Says something (#channel is optional). Useful for announcements</td>
                         <td class="alias"></td>
                     </tr>
+
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!selfrole [role name]</td>
+                        <td class="desc">Allows everyone to give themselves an admin-set role (you have to know name of the role) (see <b>Admin</b> for setup)</td>
+                        <td class="alias"></td>
+                    </tr>
                 </table>
             </div>
 
@@ -656,6 +662,17 @@
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!role replaceall [role name] @mention</td>
                         <td class="desc">Removes all roles from the mentioned user and adds the specified one</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    5. Selfrole-ing<br>
+                    <span class="cmd--desc">Selfroles allow normal users to give themselves a role set by admins</span>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings selfrole [role name/None]</td>
+                        <td class="desc">Sets the role that users can give to themselves (None disables the selfroling system)</td>
                         <td class="alias"></td>
                     </tr>
                 </table>
