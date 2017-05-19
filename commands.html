@@ -598,15 +598,26 @@
                     </tr>
                 </table>
                 <p class="bt">
-                    2. Moderation settings<br>
-                    <span class="cmd--desc">Sets server settings like word, spam, invite filtering and log channel</span>
+                    2. Channel settings<br>
+                    <span class="cmd--desc">Sets channel settings like the log channel and the default channel for join/leave/ban messages</span>
                 </p>
                 <table>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">nano.settings logchannel [None/#channel]</td>
-                        <td class="desc">sets the log channel. Set to "None" to disable</td>
+                        <td class="desc">Sets the log channel. Set to "None" to disable</td>
                         <td class="alias"></td>
                     </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings defaultchannel [#channel/None]</td>
+                        <td class="desc">Sets the channel where join/leave/... messages should be sent (None to go back to default)</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    3. Moderation settings<br>
+                    <span class="cmd--desc">Sets server settings like word, spam and invite filtering</span>
+                </p>
+                <table>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">nano.settings spamfilter [True/False]</td>
                         <td class="desc">Enables or disables the spam filter</td>
@@ -624,7 +635,18 @@
                     </tr>
                 </table>
                 <p class="bt">
-                    3. Blacklisting<br>
+                    4. Selfrole-ing<br>
+                    <span class="cmd--desc">Selfroles allow normal users to give themselves a role set by admins</span>
+                </p>
+                <table>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings selfrole [role name/None]</td>
+                        <td class="desc">Sets the role that users can give to themselves (None disables the selfroling system)</td>
+                        <td class="alias"></td>
+                    </tr>
+                </table>
+                <p class="bt">
+                    5. Blacklisting<br>
                     <span class="cmd--desc">Blacklisting makes Nano ignore certain channels</span>
                 </p>
                 <table>
@@ -645,7 +667,7 @@
                     </tr>
                 </table>
                 <p class="bt">
-                    4. Role management<br>
+                    6. Role management<br>
                     <span class="cmd--desc">This group of commands allows you to quickly assign or remove roles from a user.</span>
                 </p>
                 <table>
@@ -662,17 +684,6 @@
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!role replaceall [role name] @mention</td>
                         <td class="desc">Removes all roles from the mentioned user and adds the specified one</td>
-                        <td class="alias"></td>
-                    </tr>
-                </table>
-                <p class="bt">
-                    5. Selfrole-ing<br>
-                    <span class="cmd--desc">Selfroles allow normal users to give themselves a role set by admins</span>
-                </p>
-                <table>
-                    <tr class="cmd__entry">
-                        <td class="name command text--light-green">nano.settings selfrole [role name/None]</td>
-                        <td class="desc">Sets the role that users can give to themselves (None disables the selfroling system)</td>
                         <td class="alias"></td>
                     </tr>
                 </table>
