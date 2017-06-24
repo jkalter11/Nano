@@ -212,7 +212,7 @@
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!notifydev</td>
+                        <td class="name command text--light-green">!report</td>
                         <td class="desc">Sends a message to the developer</td>
                         <td class="alias">!suggest</td>
                     </tr>
@@ -222,9 +222,9 @@
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!info</td>
+                        <td class="name command text--light-green">nano.info</td>
                         <td class="desc">A little bit about Nano</td>
-                        <td class="alias">nano.info</td>
+                        <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">nano.prefix</td>
@@ -291,9 +291,8 @@
             <div class="cmd__category" id="reminders">
                 <p class="bb">
                     Time input examples: <span class="command">1h 3min</span>, <span class="command">2d 7min</span>,
-                    <span class="command">6h</span>, etc...
-                    Please do not use plural keywords (such as mins, hrs, ...).<br>
-                    Also, keep in mind that reminders are not second-precise.
+                    <span class="command">6h</span>, etc...<br>
+                    Also, keep in mind that reminders are not second-precise (more like minute-precise).
                 </p>
                 <table>
                     <tr class="cmd__entry">
@@ -332,7 +331,7 @@
             <div class="cmd__category" id="other">
                 <p class="bb">
                     <span class="cmd--type">Voting</span><br>
-                    These commands require a permission: <span class="command"><b>Nano Admin</b></span>.
+                    These commands require a permission: <span class="command"><b>Nano Admin</b></span> (except !vote).
                 </p>
                 <table>
                     <tr class="cmd__entry">
@@ -347,57 +346,56 @@
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!vote start "question" choice1|choice2|...</td>
-                        <td class="desc">Starts a vote</td>
+                        <td class="desc">Starts a poll on the server</td>
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!vote end</td>
-                        <td class="desc">Votes for an option if there is a vote going on</td>
+                        <td class="desc">Ends the voting process if there's a vote going on</td>
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!vote status</td>
-                        <td class="desc">Displays info about the ongoing vote (this command does not require <span
-                                class="command">Nano Admin</span></td>
+                        <td class="desc">Displays info about the ongoing vote (this command does not require <span class="command">Nano Admin</span></td>
                         <td class="alias"></td>
                     </tr>
                 </table>
                 <p class="bt">
-                    <span class="cmd--type">IMDb/OMDb</span><br>
-                    <a href="http://www.omdbapi.com/">Open Movie Database</a> is used to display movie info.
+                    <span class="cmd--type">IMDb/TMDb</span><br>
+                    <a href="https://www.themoviedb.org/">The Movie Database</a> is used to display movie info.
                 </p>
                 <table>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!imdb</td>
                         <td class="desc">General info about the movie search module</td>
-                        <td class="alias">!omdb</td>
+                        <td class="alias">!tmdb</td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!imdb search [title]</td>
                         <td class="desc">Displays general stuff about the film/series</td>
-                        <td class="alias">!omdb search</td>
+                        <td class="alias">!tmdb search</td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!imdb plot [title]</td>
                         <td class="desc">Displays more plot info about a film/series.</td>
-                        <td class="alias">!omdb plot</td>
+                        <td class="alias">!tmdb plot</td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!imdb rating [title]</td>
                         <td class="desc">Displays different ratings for a film/series</td>
-                        <td class="alias">!omdb rating</td>
+                        <td class="alias">!tmdb rating</td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!imdb trailer [title]</td>
                         <td class="desc">Gives you a link to trailers of a film/series</td>
-                        <td class="alias">!omdb trailer</td>
+                        <td class="alias">!tmdb trailer</td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!imdb help [command name]</td>
                         <td class="desc">Displays available commands regarding movie search / info about specific
                             command
                         </td>
-                        <td class="alias">!omdb help</td>
+                        <td class="alias">!tmdb help</td>
                     </tr>
                 </table>
                 <p class="bt pt20">
@@ -473,8 +471,8 @@
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!kick @mention</td>
-                        <td class="desc">Kicks a member</td>
-                        <td class="alias">nano.kick</td>
+                        <td class="desc">Un-bans a member</td>
+                        <td class="alias">nano.unban</td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!softban [time] | @mention</td>
@@ -544,8 +542,8 @@
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!cmd list (page number, if needed)</td>
-                        <td class="desc">Displays custom commands</td>
+                        <td class="name command text--light-green">!cmd list (page number)</td>
+                        <td class="desc">Displays custom commands. Move though pages with reactions.</td>
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
@@ -558,6 +556,7 @@
                     <span class="cmd--type">Server settings</span><br>
                     Admins can change server settings, such as <span class="command">join message</span>, <span
                         class="command">invite filtering</span>, etc.<br>
+                    Server settings can also be set to <span class="command">None</span> to disable that setting.
                 </p>
                 <p class="bt">
                     1. General<br>
