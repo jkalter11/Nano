@@ -87,6 +87,11 @@
                 <span class="faq__entry--q">Where can I see upcoming features and known bugs?</span>
                 <span class="faq__entry--a">I'm currently using <a class="link green" href="https://trello.com/b/u8kMqc2c" target="_blank"><b>Trello</b></a> to track progress on new features, improvements and fixing bugs.</span>
             </span>
+
+            <span class="faq__entry">
+                <span class="faq__entry--q">I want to translate Nano into my language!</span>
+                <span class="faq__entry--a">That's awesome! Join the <a href="http://discord.nanobot.pw" class="link">Nano Lounge</a> and send me a DM! Oh, also check the #announcements channel for requirements when you join ;)</span>
+            </span>
         </div>
 
         <div class="faq__category open">
@@ -98,10 +103,9 @@
             </span>
 
             <span class="faq__entry">
-                <span class="faq__entry--q">How do I set up Nano's prefix?</span>
+                <span class="faq__entry--q">How do I set up Nano's prefix? <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">It's simple. <br>
-                    1. Make sure you have correct permissions: you must be server owner or Nano Admin to use this<br>
-                    2. Run the command <span class="command">nano.changeprefix [your prefix]</span> (where [your prefix] is the new prefix you want).</span>
+                    Run the command <span class="command">nano.changeprefix your_prefix</span> (where your_prefix is the new prefix you want).</span>
             </span>
 
             <span class="faq__entry">
@@ -113,28 +117,36 @@
             </span>
 
             <span class="faq__entry">
-                <span class="faq__entry--q">How do I make Nano ignore a certain channel?</span>
+                <span class="faq__entry--q">How do I make Nano ignore a certain channel? <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">
                     Nano has a feature called <i>blacklisting</i>. With it, you can specify channels to ignore.<br>
-                    First off, make sure that you have the<span class="command lighter">Nano Admin</span>permission.
                     Then, simply run this command: <span class="command">nano.blacklist add #your_channel</span> (where your channel is the channel you want to ignore) </span>
             </span>
 
             <span class="faq__entry">
-                <span class="faq__entry--q">How do I set up "Join Messages"?</span>
+                <span class="faq__entry--q">How do I set up "Join Messages"? <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">
-                    For this, you need to be a <span class="command lighter">Nano Admin</span>. Simply run this command: <span class="command">!joinmsg [your message]</span> (replace [jour message] with the actual message).<br>
+                    To set your join message, simply type this: <span class="command">!joinmsg [your message]</span> (replace [your message] with the actual message).<br>
                     The following formatting applies: <span class="command">:user</span> -> user's name, <span class="command">:server</span> -> server name<br>
                     <b>Example:</b> <span class="command lighter">!joinmsg :user, welcome to our amazing server!</span>
                 </span>
             </span>
 
             <span class="faq__entry">
-                <span class="faq__entry--q">How do I allow normal members to give themselves a role? (more commonly known as selfroles)</span>
+                <span class="faq__entry--q">How do I allow normal members to give themselves a role? (more commonly known as selfroles) <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">
-                    Setting up selfroles requires <span class="command lighter">Nano Admin</span> permissions. First off, you must set the role that you want others to be able to access with <span class="command">nano.settings selfrole [role name]</span>.
+                    First off, you must set the role that you want others to be able to access with <span class="command">nano.settings selfrole [role name]</span>.
                     Make sure that Nano has enough permissions (<span class="command lighter">Manage Roles</span> and the role must be lower than Nano's top role).<br>
                     Then, members simply have to type in the command <span class="command">!selfrole [role name]</span> to get the role (knowing the role name is required).
+                </span>
+            </span>
+
+            <span class="faq__entry">
+                <span class="faq__entry--q">How do I change the language on my server? <span class="tag green">Nano Admin</span></span>
+                <span class="faq__entry--a">
+                    To see the available languages, type <span class="command">!language list</span>.
+                    Keep the language code in mind and type <span class="command">!language set language_code</span> (where language_code is the two-character code of your language).<br>
+                    This will change your server language. Keep in mind that this feature is still in it's "beta" stages.
                 </span>
             </span>
         </div>
