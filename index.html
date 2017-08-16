@@ -18,6 +18,7 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
 
 
 </head>
@@ -34,13 +35,17 @@
         </svg>
     </span>
 
+    <a class="nano--ibox" href="http://invite.nanobot.pw">
+        <span class="nano--add">Add Nano</span>
+    </a>
+
     <nav class="header__links flex flex--right mr90 flex--middle">
-        <span class="header__hamburger">
+        <span class="header__hamburger" id="ham">
             <span></span>
             <span></span>
             <span></span>
         </span>
-        <span class="inner flex flex--center">
+        <span class="inner flex flex--center" id="links">
             <a href="index.html">Home</a>
             <a href="commands.html">Commands</a>
             <a href="faq.html">FAQ</a>
@@ -48,19 +53,20 @@
     </nav>
 </header>
 <main>
-<nav class="header__links header__sidenav flex flex--right mr90 flex--middle flex--column">
-    <a href="#about" track="about">About</a>
-    <a href="#invite" track="invite">Invite</a>
-    <a href="#help" track="help">Help</a>
+<nav class="header__sidenav flex flex--right mr90 flex--middle flex--column" id="side_nav">
+    <a href="#home" track="home"><div></div></a>
+    <a href="#about" track="about"><div></div></a>
+    <a href="#invite" track="invite"><div></div></a>
+    <a href="#help" track="help"><div></div></a>
 </nav>
 <main>
 
 <div class="main">
     <section id="home" class="main body track">
         <div class="container">
-            <h1 class="mb45">Nano</h1>
+            <h1 class="mb45 nano--title">Nano</h1>
 
-            <p class="mb30">A multi-purpose Discord bot with a wide variety of features.</p>
+            <p class="mb30 nano--desc">A multi-purpose Discord bot with a wide variety of features.</p>
 
             <a class="body__button green" href="#invite">I want it!</a>
         </div>
@@ -72,7 +78,7 @@
             <p class="p--center mb45">
                 Nano features a wide variety of features ranging from useful commands to moderation tools to help server admins.<br>
                 Apart from that it has many fun commands to brighten up your day (Steam, Team Fortress 2, Minecraft, osu!)<br>
-                It can even search on Urban Dictionary or Wikipedia for you, show you a random xkcd comic, or tell you a yo mama joke!
+                It can even search on Urban Dictionary or Wikipedia for you, show you a random xkcd comic, or tell you a chuck norris joke!
             </p>
 
             <p>Nano is actively updated by <a href="https://github.com/DefaltSimon" class="link">DefaltSimon</a>, the creator.</p>
@@ -80,8 +86,8 @@
     </section>
     <section id="invite" class="body track">
         <div class="container">
-            <h3 class="mb60">Invite?</h3>
-            <p class="mb45">Want to add <b>Nano</b> to your server? Great!</p>
+            <h3 class="mb60">Want Nano in your server?</h3>
+            <p class="mb45">That's great!</p>
             <a class="body__button green button--add" href="http://invite.nanobot.pw" target="_blank">Use this big green button!</a>
         </div>
     </section>
@@ -94,6 +100,11 @@
         </div>
     </section>
 </div>
+
+<script>
+    const main_page = true;
+</script>
+
 <footer class="footer">
     <div class="conteiner flex flex--column flex--middle flex--center">
         <div>

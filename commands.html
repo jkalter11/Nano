@@ -18,6 +18,7 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
 
 
 </head>
@@ -34,13 +35,17 @@
         </svg>
     </span>
 
+    <a class="nano--ibox" href="http://invite.nanobot.pw">
+        <span class="nano--add">Add Nano</span>
+    </a>
+
     <nav class="header__links flex flex--right mr90 flex--middle">
-        <span class="header__hamburger">
+        <span class="header__hamburger" id="ham">
             <span></span>
             <span></span>
             <span></span>
         </span>
-        <span class="inner flex flex--center">
+        <span class="inner flex flex--center" id="links">
             <a href="index.html">Home</a>
             <a href="commands.html">Commands</a>
             <a href="faq.html">FAQ</a>
@@ -49,11 +54,11 @@
 </header>
 <main>
 <div class="main">
-    <section id="commands" class="body__commands">
+    <section id="commands" class="body__commands body__page">
         <div class="body__commands__text">
             <h1>Nano's commands</h1>
-            <p>Nano's default prefix for commands is <span class="command exc">!</span>, but it can be changed. Keep in
-                mind that you might have to use a different prefix on your server.</p>
+            <p>Nano's default prefix for commands is <span class="command exc">!</span>, but it can be changed.
+                Just keep in mind that you might have to use a different prefix on your server.</p>
             <p class="smaller">Legend: ( ) - parameter is optional, [ ] - parameter is required</p>
         </div>
 
@@ -101,15 +106,16 @@
                         <td class="desc">Gives you a link to invite Nano to your server</td>
                         <td class="alias">nano.invite</td>
                     </tr>
-                    <tr class="cmd__entry">
-                        <td class="name command text--light-green">!say (#channel) [message]</td>
-                        <td class="desc">Says something (#channel is optional). Useful for announcements</td>
-                        <td class="alias"></td>
-                    </tr>
+
 
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!selfrole [role name]</td>
                         <td class="desc">Allows everyone to give themselves an admin-set role (you have to know name of the role) (see <b>Admin</b> for setup)</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!selfrole list</td>
+                        <td class="desc">Displays all available selfroles in the current server.</td>
                         <td class="alias"></td>
                     </tr>
                 </table>
@@ -157,8 +163,10 @@
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!dice</td>
-                        <td class="desc">Rolls the dice</td>
+                        <td class="name command text--light-green">!dice (dice expression)</td>
+                        <td class="desc">Rolls the dice (defaults do one 6-sided dice)
+                            <br>Dice expressions are a common way of displaying dice stuff: 1d6 means: throw a 6-sided dice once, 3d8 means: throw an 8-sided dice three times.
+                            <br>You can also combine multiple different types of dice with <b>+</b></td>
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
@@ -187,7 +195,7 @@
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!rip (something/@mention)</td>
+                        <td class="name command text--light-green">!rip (something/@mention/text)</td>
                         <td class="desc">Rest in pepperoni</td>
                         <td class="alias"></td>
                     </tr>
@@ -212,9 +220,9 @@
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!report</td>
-                        <td class="desc">Sends a message to the developer</td>
-                        <td class="alias">!suggest</td>
+                        <td class="name command text--light-green">!suggest</td>
+                        <td class="desc">Sends a message to the developer. Use this only if you're not in <a class="link lightblue" href="https://discord.gg/FZJB6UJ">Nano Lounge</a></td>
+                        <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!bug</td>
@@ -271,11 +279,6 @@
                         <td class="alias">!steam user</td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!steam friends [user]</td>
-                        <td class="desc">Lists friends that the user has</td>
-                        <td class="alias"></td>
-                    </tr>
-                    <tr class="cmd__entry">
                         <td class="name command text--light-green">!steam games [user]</td>
                         <td class="desc">Lists all owned games that the user has</td>
                         <td class="alias"></td>
@@ -306,12 +309,12 @@
                         <td class="alias">!remind help</td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!remind here in [time] : [message]</td>
+                        <td class="name command text--light-green">!remind here in [time] :/to [message]</td>
                         <td class="desc">Adds a reminder. You will be reminded in the channel you start this in</td>
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!remind me in [time] : [message]</td>
+                        <td class="name command text--light-green">!remind me in [time] :/to [message]</td>
                         <td class="desc">Adds a reminder. You will be reminded in your DM</td>
                         <td class="alias"></td>
                     </tr>
@@ -341,11 +344,11 @@
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!vote [option number]</td>
-                        <td class="desc">Votes for an option if there is a vote going on</td>
+                        <td class="desc">Votes for an option if there is a vote going on (does not require any permission)</td>
                         <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">!vote start "question" choice1|choice2|...</td>
+                        <td class="name command text--light-green">!vote start title|choice1|choice2|...</td>
                         <td class="desc">Starts a poll on the server</td>
                         <td class="alias"></td>
                     </tr>
@@ -458,6 +461,11 @@
                         <th class="name">Command</th>
                         <th class="desc">Description</th>
                         <th class="alias">Aliases</th>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">!say (#channel) [message]</td>
+                        <td class="desc">Says something (#channel is optional). Useful for announcements</td>
+                        <td class="alias"></td>
                     </tr>
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!ban @mention</td>
@@ -639,8 +647,13 @@
                 </p>
                 <table>
                     <tr class="cmd__entry">
-                        <td class="name command text--light-green">nano.settings selfrole [role name/None]</td>
-                        <td class="desc">Sets the role that users can give to themselves (None disables the selfroling system)</td>
+                        <td class="name command text--light-green">nano.settings selfrole add [role name]</td>
+                        <td class="desc">Adds the role to a list of roles that users can give to themselves with !selfrole</td>
+                        <td class="alias"></td>
+                    </tr>
+                    <tr class="cmd__entry">
+                        <td class="name command text--light-green">nano.settings selfrole remove [role name]</td>
+                        <td class="desc">Removes the role from a list of selfroles</td>
                         <td class="alias"></td>
                     </tr>
                 </table>
@@ -667,7 +680,7 @@
                     </tr>
                 </table>
                 <p class="bt">
-                    5. Blacklisting<br>
+                    6. Blacklisting<br>
                     <span class="cmd--desc">Blacklisting makes Nano ignore certain channels</span>
                 </p>
                 <table>
@@ -688,7 +701,7 @@
                     </tr>
                 </table>
                 <p class="bt">
-                    6. Role management<br>
+                    7. Role management<br>
                     <span class="cmd--desc">This group of commands allows you to quickly assign or remove roles from a user.</span>
                 </p>
                 <table>
@@ -700,11 +713,6 @@
                     <tr class="cmd__entry">
                         <td class="name command text--light-green">!role remove [role name] @mention</td>
                         <td class="desc">Removes a role from the mentioned user</td>
-                        <td class="alias"></td>
-                    </tr>
-                    <tr class="cmd__entry">
-                        <td class="name command text--light-green">!role replaceall [role name] @mention</td>
-                        <td class="desc">Removes all roles from the mentioned user and adds the specified one</td>
                         <td class="alias"></td>
                     </tr>
                 </table>

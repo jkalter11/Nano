@@ -18,6 +18,7 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
 
 
 </head>
@@ -34,13 +35,17 @@
         </svg>
     </span>
 
+    <a class="nano--ibox" href="http://invite.nanobot.pw">
+        <span class="nano--add">Add Nano</span>
+    </a>
+
     <nav class="header__links flex flex--right mr90 flex--middle">
-        <span class="header__hamburger">
+        <span class="header__hamburger" id="ham">
             <span></span>
             <span></span>
             <span></span>
         </span>
-        <span class="inner flex flex--center">
+        <span class="inner flex flex--center" id="links">
             <a href="index.html">Home</a>
             <a href="commands.html">Commands</a>
             <a href="faq.html">FAQ</a>
@@ -50,7 +55,7 @@
 <main>
 <div class="main">
 <section id="faq">
-    <div class="body__faq flex flex--center flex--column">
+    <div class="body__page body__faq flex flex--center flex--column">
         <h1>FAQ and Guides</h1>
 
         <div class="faq__category open">
@@ -63,8 +68,8 @@
 
             <span class="faq__entry">
                 <span class="faq__entry--q">How do I add Nano to my server?</span>
-                <span class="faq__entry--a">It's easy. Just click on this <a class="link lightblue" href="https://discordapp.com/oauth2/authorize?client_id=171632249459048448&scope=bot&permissions=1543765079" target="_blank"><b>link</b></a>,
-                                            sign into Discord (if not already) and click <b>Authorize</b></span>
+                <span class="faq__entry--a">It's easy. Just click on this <a class="link lightblue" href="https://discordapp.com/oauth2/authorize?client_id=171632249459048448&scope=bot&permissions=1543765079" target="_blank">link</a>,
+                                            sign into Discord (if not already), select your server and click <b>Authorize</b></span>
             </span>
 
             <span class="faq__entry">
@@ -75,17 +80,17 @@
             <span class="faq__entry">
                 <span class="faq__entry--q">A feature is broken!</span>
                 <span class="faq__entry--a">Before reporting a bug check a few things: check if you are using the right prefix (with <span class="command">nano.prefix</span>) and look at <span class="command">!help [your command]</span> to see if you are using the command correctly.
-                                            If you are, then it would be nice if you could report this bug to me/helpers on the <a class="link lightblue" href="https://discord.gg/FZJB6UJ"><b>Nano Lounge</b></a></span>
+                                            If you are, then it would be nice if you could report this bug to me/helpers on the <a class="link lightblue" href="https://discord.gg/FZJB6UJ">Nano Lounge</a></span>
             </span>
 
             <span class="faq__entry">
                 <span class="faq__entry--q">I have a good idea for a feature!</span>
-                <span class="faq__entry--a">Every suggestion is very welcome and will be considered. When you have a solid idea, make sure to tell me at <a class="link lightblue" href="https://discord.gg/FZJB6UJ"><b>Nano Lounge</b></a> or use <span class="command">!suggest [your suggestion]</span> </span>
+                <span class="faq__entry--a">Every suggestion is very welcome and will be considered. When you have a solid idea, make sure to tell me at <a class="link lightblue" href="https://discord.gg/FZJB6UJ">Nano Lounge</a> or use <span class="command">!suggest [your suggestion]</span> </span>
             </span>
 
             <span class="faq__entry">
                 <span class="faq__entry--q">Where can I see upcoming features and known bugs?</span>
-                <span class="faq__entry--a">I'm currently using <a class="link green" href="https://trello.com/b/u8kMqc2c" target="_blank"><b>Trello</b></a> to track progress on new features, improvements and fixing bugs.</span>
+                <span class="faq__entry--a">I'm currently using <a class="link green" href="https://trello.com/b/u8kMqc2c" target="_blank">Trello</a> to track progress on new features, improvements and fixing bugs.</span>
             </span>
 
             <span class="faq__entry">
@@ -110,10 +115,12 @@
 
             <span class="faq__entry">
                 <span class="faq__entry--q">How do I make someone a mod / admin?</span>
-                <span class="faq__entry--a">Nano works on a principle of roles for permissions. To begin, create two roles: <i>Nano Mod</i> and <i>Nano Admin</i>.
-                                            These roles <b>DO NOT</b> need any permissions, the only important part is the name.
-                                            To make someone a mod, assign them the role <b>Nano Mod</b> and for admins, give them the <b>Nano Admin</b> role.<br>
-                                            A list of permitted commands for each role can be found on the commands page.</span>
+                <span class="faq__entry--a">
+                    Nano works on a principle of roles for permissions. To begin, create two roles: <i>Nano Mod</i> and <i>Nano Admin</i>.
+                    These roles <b>DO NOT</b> need any permissions, the only important part is the name.
+                    To make someone a mod, assign them the role <b>Nano Mod</b> and for admins, give them the <b>Nano Admin</b> role.<br>
+                    Nano Admins automatically get all permissions that Nano Mods have.
+                    A detailed list of commands for each role can be found on the commands page under categories <a href="commands.html#moderator" class="link">Moderator</a> and <a href="commands.html#admin" class="link">Admin</a>.</span>
             </span>
 
             <span class="faq__entry">
@@ -127,17 +134,19 @@
                 <span class="faq__entry--q">How do I set up "Join Messages"? <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">
                     To set your join message, simply type this: <span class="command">!joinmsg [your message]</span> (replace [your message] with the actual message).<br>
-                    The following formatting applies: <span class="command">:user</span> -> user's name, <span class="command">:server</span> -> server name<br>
-                    <b>Example:</b> <span class="command lighter">!joinmsg :user, welcome to our amazing server!</span>
+                    The following formatting applies:
+                    <br><span class="command">:user</span> -> mention of joined user, <span class="command">:username</span> -> user's name, <span class="command">:server</span> -> server name<br>
+                    <br><b>Example:</b> <span class="command lighter">!joinmsg :user, welcome to our amazing server!</span>
                 </span>
             </span>
 
             <span class="faq__entry">
-                <span class="faq__entry--q">How do I allow normal members to give themselves a role? (more commonly known as selfroles) <span class="tag green">Nano Admin</span></span>
+                <span class="faq__entry--q">How do I allow normal members to give themselves a role? (selfroles) <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">
-                    First off, you must set the role that you want others to be able to access with <span class="command">nano.settings selfrole [role name]</span>.
-                    Make sure that Nano has enough permissions (<span class="command lighter">Manage Roles</span> and the role must be lower than Nano's top role).<br>
-                    Then, members simply have to type in the command <span class="command">!selfrole [role name]</span> to get the role (knowing the role name is required).
+                    First, you must set up the roles that you want to have accessible to normal members of the server.
+                    To add a selfrole, use <span class="command">nano.settings selfrole add [role name]</span> and to remove it, do <span class="command">nano.settings selfrole remove [role name]</span>.
+                    <br>Normal users must use the command <span class="command">!selfrole</span> followed by the name of the role. If they do not know what roles they can access, they can list the server's current
+                    selfroles with <span class="command">!selfrole list</span>
                 </span>
             </span>
 
@@ -145,8 +154,8 @@
                 <span class="faq__entry--q">How do I change the language on my server? <span class="tag green">Nano Admin</span></span>
                 <span class="faq__entry--a">
                     To see the available languages, type <span class="command">!language list</span>.
-                    Keep the language code in mind and type <span class="command">!language set language_code</span> (where language_code is the two-character code of your language).<br>
-                    This will change your server language. Keep in mind that this feature is still in it's "beta" stages.
+                    Keep the language code in mind and type <span class="command">!language set language_code</span> (where language_code is the two-to-four character code of your language).<br>
+                    This will change your server language. Keep in mind that this feature is still in its "beta" stage.
                 </span>
             </span>
         </div>

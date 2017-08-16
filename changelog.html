@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- page details -->
+    <meta name="description" content="A webpage about Nano, a Discord bot">
+    <meta name="keywords" content="Discord,Nano,bot,moderation,fun">
+    <meta name="author" content="DefaltSimon">
+
+    <!-- visual info -->
+    <title>Nano | by DefaltSimon</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="theme-color" content="#3c3c3c">
+    <!-- css -->
+    <link href="styles/main.css" rel="stylesheet">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+
+<header class="header flex flex--middle">
+    <span class="header__brand">
+        <a href="index.html">Nano</a>
+        <svg width="80" height="40" viewBox="0 0 80 40" preserveAspectRatio="none">
+            <path d="M0 40 H 80 V 0 H 0 L0 40" stroke-width="4px" stroke="#568e39" style="fill: none"></path>
+            <rect height="40" width="80" fill="#609943" stroke="none"></rect>
+        </svg>
+    </span>
+
+    <a class="nano--ibox" href="http://invite.nanobot.pw">
+        <span class="nano--add">Add Nano</span>
+    </a>
+
+    <nav class="header__links flex flex--right mr90 flex--middle">
+        <span class="header__hamburger" id="ham">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="inner flex flex--center" id="links">
+            <a href="index.html">Home</a>
+            <a href="commands.html">Commands</a>
+            <a href="faq.html">FAQ</a>
+        </span>
+    </nav>
+</header>
+<main>
+
+<div class="main">
+    <section class="body__changelog body__page">
+        <h1 class="changelog--title">Changelog</h1>
+        <section class="markdown changelog--box" id="3.7">
+
+            <h1 class="h mb10">Update 3.7</h1>
+
+            <p class="mb45">
+                This version is effectively a complete overhaul of the bot. Almost half the code has been changed for better user experience and performance. There were also many stability improvements so Nano doesn't just crash when something I didn't predict happens.
+                Also, Nano is now prepared for the increasing amount of servers with support for sharding which splits the server load between multiple instances, so you can always get the fastest response time ;)
+            </p>
+
+
+            <h2 class="h mb10">Command Syntax Changes</h2>
+            <p>
+                As I was going over the commands, I realized that some of them had weird syntax: <b>!softban</b>, for example.
+                It would only accept mentions, not names or ids. This is the reason I decided that there should be a global way of how users are passed in commands.
+                From now on, most (if not all) of commands that take a @mention as a parameter now accept names and some even IDs.
+                Hopefully that clears up the confusion (some commands had this before, some didn't).
+                <br><br>
+
+                I also noticed <b>!softban</b> had weird order of parameters - <b>time | @mention</b>, which didn't really make sense.
+                So I changed it to a more sensible and sane <b>@mention/name for [time]</b> or with the good ol' <b>|</b> as a separator: <b>@mention/name | [time]</b>.
+
+                <br><br>
+
+                Another thing that was changed is the weird syntax of <b>!vote start</b>.
+                You used to have to enclose your title in two quotation marks, but now it's as simple as <b>title|option1|option2</b>. Told ya, simple.
+            </p>
+
+            <h2 class="h mb10">Emojis are coming, run!</h2>
+            <img src="images/emojis2.gif" alt="Emojis!" class="h">
+            <p>
+                Good on ya, The Emoji Movie. <br>Anyway, many commands, including <b>!vote start</b>, <b>!vote end</b>, <b>!urban</b>, <b>!wiki</b> and many more
+                received a visual overhaul with emojis to split up the text (it's just more pleasant to look at, I guess).
+                Most of commands that don't have them yet will get them in a smaller update down the road.
+            </p>
+
+            <h2 class="h mb10">Rip Commands</h2>
+            <p>
+                Here's the commands that were removed: <b>!steam friends</b> and <b>!role replaceall</b>. Let me explain why.
+                <br><br>
+
+                So, here's a little story: one day Simon woke up. He told himself: "It's a nice day outside, let's write some code". You get the idea.
+                If I remember correctly, there weren't many commands at that time, so I was actively looking for something to implement, because I felt like something was missing.
+                So I open Spotify and put on some calming track. At that time one of Steam's notifications pops up and then I remember: "I wonder: can I do something with Steam?".
+                Fast-forward to a few minutes of googling, I found a steam library for Python (the programming language Nano is written in), and I said to myself: "Lets add <b>ALLL</b> the commands."
+                So I added user, game and <b>friend</b> search, because why not. Heres the catch: when you implement these commands you don't think: "I wonder, who is really gonna use this?".
+                <br><br>Guess what, it wasn't used much if at all, so I decided to remove it. The same goes for <b>!role replaceall</b>
+            </p>
+
+            <h2 class="h mb10">Pages for me, pages for you, pages for everyone!</h2>
+            <img src="images/pages.gif" alt="Pages" class="h">
+            <p>
+                All commands that you can imagine having a list now have them (<b>!mute list</b>, <b>!selfrole list</b>, <b>!cmd list</b>).
+                This means that if commands don't fit in one message, you can now navigate through pages by reacting to the message.
+            </p>
+
+            <h2 class="h mb10">Multiple Selfroles</h2>
+            <p>
+                Yes, I heard your feedback ;). You can now add selfroles with <b>nano.settings selfrole add [role name]</b> and remove them with <b>nano.settings selfrole remove [role name]</b>.
+                <br>To see all your selfroles, type <b>!selfrole list</b>. Using selfroles is as it was before, eg. <b>!selfrole [role name]</b>.
+            </p>
+
+            <h2 class="h mb10">Passing The Turing Test</h2>
+            <img src="images/conversation.gif" alt="Conversation with Nano" class="h">
+            <p>
+                Ok, maybe not that good.<br>Before this, conversation with Nano used to be <i>very</i> limited (as in, if one character was wrong, Nano wouldn't know wtf you were talking about).
+                This system is now improved and you can say the sentences a little differently and Nano will still know what's the question. In future updates, I'll add more responses as well.<br>
+                Still, don't expect it to be like a human, conversation is purely for fun.
+            </p>
+
+            <h2 class="h mb10">Permission Changes</h2>
+            <p>
+                All <b>Nano Admins</b> now have access to commands that <b>Nano Mods</b> can use. Not sure why this was the way it was. Thanks for pointing that out, Silver79!
+            </p>
+
+            <h2 class="h mb10">Other style changes, etc...</h2>
+            <img src="images/plsprefix.gif" alt="Pls ping" class="h">
+            <p>
+                <b>!rip</b> now doesn't mention people anymore (it was annoying, you'd get a double mention everytime you were mentioned in a !rip command)<br>
+                <b>The voting system</b> received an overhaul, but that caused incompatibility with the old one, so all polls are going to be removed with this update.
+                <br>Aside from visible changes, there are also a lot of bugfixes included in this update.
+                <br><br>
+                You can now have a <b>space in your prefix</b>! You might have noticed that Discord strips away spaces at the end of messages, which meant you couldn't do <b>nano.changeprefix pls </b> with a space.
+                Well, now you can! Use %20 instead of the space at the end: <b>nano.changeprefix pls%20</b>.
+            </p>
+
+
+            <!--<h2 class="h">An honest thank you</h2>
+            <p>
+                As this change log is coming to an end, I'd like to thank all of you from the bottom of my heart for the support and kindness you have shown for Nano.<br>
+                It means a <b>lot</b> to me to see someone using Nano and being happy about it.
+            </p>-->
+
+        </section>
+    </section>
+</div>
+<footer class="footer">
+    <div class="conteiner flex flex--column flex--middle flex--center">
+        <div>
+            <a class="link white" href="https://github.com/DefaltSimon">About me</a>
+            <span>|</span>
+            <a class="link white" href="https://github.com/DefaltSimon/Nano">Nano on Github</a>
+        </div>
+        <div>&copy; Copyright 2017, DefaltSimon</div>
+    </div>
+
+</footer>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"
+        integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-81866461-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
+
+
