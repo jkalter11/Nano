@@ -15,6 +15,13 @@ if (typeof ga === "undefined") {
     gaEnabled = false;
 }
 
+// forEach that is compatible with all browsers
+let forEach = function (array, callback, scope) {
+    for (let i = 0; i < array.length; i++) {
+        callback.call(scope, i, array[i]); // passes back stuff we need
+    }
+};
+
 // ANIMATIONS
 // These animations are not mine
 // LICENSE: https://github.com/gdsmith/jquery.easing/blob/master/LICENSE
@@ -64,7 +71,7 @@ if (isOnMainPage()) {
     // Animate scroll
     let animationLinks = document.querySelectorAll("a[href^='#']");
 
-    animationLinks.forEach( function (item) {
+    forEach(animationLinks, function (index, item) {
         item.onclick = function (e) {
             e.preventDefault();
 
@@ -82,7 +89,7 @@ if (isOnMainPage()) {
     // Side buttons tracking
     // Layout: {id: circle_from_id}
     let trackedCircles = {};
-    mainSections.forEach(function (item) {
+    forEach(mainSections, function (index, item) {
         let id = item.getAttribute("id");
         let actual = document.querySelector("#side_nav a[track=" + id + "]");
 
@@ -107,7 +114,7 @@ if (isOnMainPage()) {
     function sectionTracker() {
         let windowFromTop = getScrollFromTop();
 
-        mainSections.forEach(function (el) {
+        forEach(mainSections, function (index, el) {
             let th = $(el);
 
             let elFromTop = th.offset().top;
@@ -141,7 +148,7 @@ if (isOnPage("commands.html")) {
         commandCategories = document.querySelectorAll(".cmd__switcher li");
 
     let trackedSlides = {};
-    commandSlides.forEach(function (el) {
+    forEach(commandSlides, function (index, el) {
         let id = el.getAttribute("id");
 
         if (id !== null) {
@@ -151,7 +158,7 @@ if (isOnPage("commands.html")) {
 
     // Command slide tracker
     let group_to_button = {};
-    commandCategories.forEach(function (el) {
+    forEach(commandCategories, function (index, el) {
         let slideName = el.getAttribute("slide");
 
         if (slideName !== null) {
@@ -176,7 +183,7 @@ if (isOnPage("commands.html")) {
     }
 
     // Change slides when a group is clicked
-    commandCategories.forEach(function (el) {
+    forEach(commandCategories, function (index, el) {
         el.onclick = function (e) {
             e.preventDefault();
 
