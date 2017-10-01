@@ -2,22 +2,22 @@
 const root = $('html, body');
 
 // Browser support for beacon transport / GA
-let beaconSupported = true;
+var beaconSupported = true;
 
 if (!navigator.sendBeacon) {
     console.log("Beacon is NOT supported, disabling...");
     beaconSupported = false;
 }
 
-let gaEnabled = true;
+var gaEnabled = true;
 if (typeof ga === "undefined") {
     console.log("Google analytics is disabled.");
     gaEnabled = false;
 }
 
 // forEach that is compatible with all browsers
-let forEach = function (array, callback, scope) {
-    for (let i = 0; i < array.length; i++) {
+var forEach = function (array, callback, scope) {
+    for (var i = 0; i < array.length; i++) {
         callback.call(scope, i, array[i]); // passes back stuff we need
     }
 };
@@ -34,9 +34,9 @@ $.extend($.easing, {
 
 // Thanks SO
 function throttle(fn, interval) {
-    let lastCall, timeoutId;
+    var lastCall, timeoutId;
     return function () {
-        let now = new Date().getTime();
+        var now = new Date().getTime();
         if (lastCall && now < (lastCall + interval)) {
             // if we are inside the interval we wait
             clearTimeout(timeoutId);
@@ -69,14 +69,14 @@ if (isOnMainPage()) {
     const mainSections = document.querySelectorAll("section.track");
 
     // Animate scroll
-    let animationLinks = document.querySelectorAll("a[href^='#']");
+    var animationLinks = document.querySelectorAll("a[href^='#']");
 
     forEach(animationLinks, function (index, item) {
         item.onclick = function (e) {
             e.preventDefault();
 
-            let hash = this.hash;
-            let target = $(hash);
+            var hash = this.hash;
+            var target = $(hash);
 
             root.stop().animate({
                 'scrollTop': target.offset().top
@@ -88,10 +88,10 @@ if (isOnMainPage()) {
 
     // Side buttons tracking
     // Layout: {id: circle_from_id}
-    let trackedCircles = {};
+    var trackedCircles = {};
     forEach(mainSections, function (index, item) {
-        let id = item.getAttribute("id");
-        let actual = document.querySelector("#side_nav a[track=" + id + "]");
+        var id = item.getAttribute("id");
+        var actual = document.querySelector("#side_nav a[track=" + id + "]");
 
         // Check if it exists
         if (actual !== null) {
@@ -100,11 +100,11 @@ if (isOnMainPage()) {
     });
 
     // Light up the first one
-    let firstCircle = document.querySelector("#side_nav a");
+    var firstCircle = document.querySelector("#side_nav a");
     firstCircle.classList.add("active");
 
     function makeOthersInactive(keep_thisone) {
-        for (let a in trackedCircles) {
+        for (var a in trackedCircles) {
             if (trackedCircles[a] !== keep_thisone) {
                 trackedCircles[a].classList.remove("active");
             }
@@ -112,15 +112,15 @@ if (isOnMainPage()) {
     }
 
     function sectionTracker() {
-        let windowFromTop = getScrollFromTop();
+        var windowFromTop = getScrollFromTop();
 
         forEach(mainSections, function (index, el) {
-            let th = $(el);
+            var th = $(el);
 
-            let elFromTop = th.offset().top;
-            let id = el.getAttribute("id");
+            var elFromTop = th.offset().top;
+            var id = el.getAttribute("id");
 
-            let tracked = trackedCircles[id];
+            var tracked = trackedCircles[id];
 
             // Light up a different circle if user scrolled
             if (windowFromTop >= elFromTop) {
@@ -144,12 +144,12 @@ hamburger.onclick = function () {
 
 
 if (isOnPage("commands.html")) {
-    let commandSlides = document.querySelectorAll(".body__commands__container .cmd__category"),
+    var commandSlides = document.querySelectorAll(".body__commands__container .cmd__category"),
         commandCategories = document.querySelectorAll(".cmd__switcher li");
 
-    let trackedSlides = {};
+    var trackedSlides = {};
     forEach(commandSlides, function (index, el) {
-        let id = el.getAttribute("id");
+        var id = el.getAttribute("id");
 
         if (id !== null) {
             trackedSlides[id] = el;
@@ -157,9 +157,9 @@ if (isOnPage("commands.html")) {
     });
 
     // Command slide tracker
-    let group_to_button = {};
+    var group_to_button = {};
     forEach(commandCategories, function (index, el) {
-        let slideName = el.getAttribute("slide");
+        var slideName = el.getAttribute("slide");
 
         if (slideName !== null) {
             group_to_button[slideName] = el;
@@ -167,7 +167,7 @@ if (isOnPage("commands.html")) {
     });
 
     function hideOtherSlides(keep_this) {
-        for (let a in trackedSlides) {
+        for (var a in trackedSlides) {
             if (trackedSlides[a] !== keep_this) {
                 trackedSlides[a].classList.remove("show");
             }
@@ -175,7 +175,7 @@ if (isOnPage("commands.html")) {
     }
 
     function unActiveAllCategories(but_this) {
-        for (let a in group_to_button) {
+        for (var a in group_to_button) {
             if (group_to_button[a] !== but_this) {
                 group_to_button[a].classList.remove("active");
             }
@@ -187,8 +187,8 @@ if (isOnPage("commands.html")) {
         el.onclick = function (e) {
             e.preventDefault();
 
-            let name = this.getAttribute("slide");
-            let slide = trackedSlides[name];
+            var name = this.getAttribute("slide");
+            var slide = trackedSlides[name];
 
             hideOtherSlides(slide);
             slide.classList.add("show");
@@ -199,12 +199,12 @@ if (isOnPage("commands.html")) {
 
     // Check hash in url and redirect to that category
     if (window.location.hash) {
-        let hash = window.location.hash.replace("#", "");
+        var hash = window.location.hash.replace("#", "");
 
-        let slide = group_to_button[hash];
+        var slide = group_to_button[hash];
         if (typeof slide !== "undefined") {
             // There is an element with such id, switch to it
-            let one = trackedSlides[hash];
+            var one = trackedSlides[hash];
             hideOtherSlides(one);
             //slide.classList.add("show");
             unActiveAllCategories(slide);
