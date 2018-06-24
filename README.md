@@ -1,12 +1,5 @@
 # Nano
-
-[![Version](https://img.shields.io/badge/live%20version-3.7.1-green.svg)](https://defaltsimon.github.io/Nano/)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/DefaltSimon/Nano/blob/master/LICENSE)  
-
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/nano-discord-bot/localized.svg)](https://crowdin.com/project/nano-discord-bot)  
-[![Discord](https://img.shields.io/discord/132905482271719424.svg?label=discord)](http://discord.nanobot.pw)  
-
-by DefaltSimon, made in python with [discord.py api](https://github.com/Rapptz/discord.py) .
+.py) .
 
   
 ### A list of all available commands is available [here](http://nanobot.pw/commands.html)  
@@ -26,8 +19,7 @@ by DefaltSimon, made in python with [discord.py api](https://github.com/Rapptz/d
 
 ### Invite and help  
   
-Wanna add Nano to your server? Use this magic **[invite link](https://discordapp.com/oauth2/authorize?client_id=171632249459048448&scope=bot&permissions=1543765079)!**  
-If you're confused or need help, hop on our Discord server - **[Nano lounge](http://discord.nanobot.pw)**.  
+  
 
 ----
 
